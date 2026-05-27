@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Moda Plus</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            background-color: #000; color: #d4af37; font-family: sans-serif; 
+            margin: 0; padding: 20px; display: flex; flex-direction: column; 
+            align-items: center; min-height: 100vh;
+        }
+        .header-area { text-align: center; margin-top: 40px; margin-bottom: 50px; }
+        .logo-box { 
+            font-size: 4.5rem; font-weight: bold; cursor: pointer; 
+            color: #d4af37; text-shadow: 0 0 15px #d4af37;
+        }
+        .subtitle { font-size: 1.1rem; letter-spacing: 2px; margin-top: 10px; }
+        .btn-wa { 
+            display: block; width: 100%; max-width: 300px;
+            background: #d4af37; color: #000; text-align: center;
+            padding: 18px; text-decoration: none; font-weight: bold; 
+            border-radius: 8px; font-size: 1.2rem; border: 2px solid #d4af37;
+        }
+        #admin-panel { 
+            display: none; background: #1a1a1a; padding: 20px; 
+            border: 1px solid #d4af37; margin-top: 30px; width: 100%; max-width: 300px;
+            text-align: center; border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-area" onclick="checkAdmin()">
+        <div class="logo-box">C&G</div>
+        <div class="subtitle">MODA PLUS Y ACCESORIOS</div>
+    </div>
+
+    <a href="https://wa.me/573007637773" class="btn-wa">Asesorías</a>
+
+    <div id="admin-panel">
+        <h3 style="color:#d4af37;">Panel Admin</h3>
+        <button onclick="closeAdmin()" style="background:transparent; color:#fff; border:1px solid #fff; padding:8px; cursor:pointer;">Cerrar</button>
+    </div>
+
+    <script>
+        let clicks = 0;
+        function checkAdmin() {
+            clicks++;
+            if (clicks === 3) {
+                let pass = prompt("Clave:");
+                if (pass === "1234") {
+                    document.getElementById('admin-panel').style.display = 'block';
+                }
+                clicks = 0;
+            }
+        }
+        function closeAdmin() { document.getElementById('admin-panel').style.display = 'none'; }
+    </script>
+</body>
+</html>
