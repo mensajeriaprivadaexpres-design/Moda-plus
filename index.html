@@ -5,56 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CG Moda Plus y Accesorios</title>
     <style>
-        /* Seguridad: Bloqueo de selección y menú contextual */
         body { 
-            background-color: #000; color: #d4af37; font-family: sans-serif; margin: 0; 
-            user-select: none; -webkit-user-select: none; 
+            background-color: #000; color: #d4af37; font-family: 'Arial', sans-serif; 
+            margin: 0; display: flex; flex-direction: column; align-items: center; 
+            min-height: 100vh; user-select: none; 
         }
         
-        /* Encabezado */
-        header { text-align: center; padding: 20px; position: relative; }
-        #admin-trigger { cursor: pointer; display: inline-block; }
-        .logo { font-size: 2rem; font-weight: bold; color: #d4af37; text-shadow: 0 0 10px #d4af37; }
+        header { text-align: center; padding: 50px 20px; }
+        .logo-box { 
+            font-size: 5rem; font-weight: bold; cursor: pointer; 
+            color: #d4af37; text-shadow: 0 0 20px #d4af37; 
+            margin-bottom: 5px; letter-spacing: -2px;
+        }
+        .subtitle { font-size: 1.2rem; color: #d4af37; margin-bottom: 30px; }
         
-        /* Banner y Botones */
-        .banner { border: 2px solid #d4af37; padding: 10px; display: flex; justify-content: center; gap: 15px; margin: 10px; }
-        .btn { background: #d4af37; color: #000; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; }
-        
-        /* Carruseles */
-        .carousel { display: flex; overflow-x: auto; gap: 10px; padding: 10px; scroll-snap-type: x mandatory; }
-        .item { min-width: 45%; scroll-snap-align: start; border: 1px solid #d4af37; padding: 10px; text-align: center; }
-        
-        /* Redes */
-        .socials { text-align: center; margin: 20px; }
+        .main-container { 
+            width: 90%; max-width: 400px; border: 1px solid #d4af37; 
+            padding: 30px; text-align: center; border-radius: 10px;
+        }
+        .btn-wa { 
+            display: block; background: #d4af37; color: #000; 
+            padding: 15px; text-decoration: none; font-weight: bold; 
+            border-radius: 5px; font-size: 1.1rem;
+        }
+
+        #admin-panel { 
+            display: none; background: #111; padding: 20px; 
+            border: 1px solid #d4af37; margin-top: 20px; width: 90%; 
+            max-width: 400px; text-align: center;
+        }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
     <header>
-        <div id="admin-trigger" onclick="checkAdmin()">
-            <h1 class="logo">CG Moda Plus y Accesorios</h1>
-        </div>
-        <div class="banner">
-            <a href="https://wa.me/tu_numero" class="btn">Asesorías</a>
-            <a href="#" class="btn">Reseñas</a>
-        </div>
+        <div class="logo-box" onclick="checkAdmin()">C&G</div>
+        <div class="subtitle">Moda Plus y Accesorios</div>
     </header>
 
-    <h2>Colección Moda & Calzada</h2>
-    <div class="carousel">
-        <div class="item">Producto 1<br><button>Comprar</button></div>
-        <div class="item">Producto 2<br><button>Comprar</button></div>
-        <div class="item">Producto 3<br><button>Comprar</button></div>
+    <div class="main-container">
+        <a href="https://wa.me/573007637773" class="btn-wa">Asesorías</a>
     </div>
 
-    <h2>Accesorios Destacados</h2>
-    <div class="carousel">
-        <div class="item">Accesorio 1<br><button>Comprar</button></div>
-        <div class="item">Accesorio 2<br><button>Comprar</button></div>
-    </div>
-
-    <div class="socials">
-        <a href="https://www.facebook.com/marlin.giraldo.71" target="_blank">Facebook</a>
+    <div id="admin-panel">
+        <h2 style="color:#d4af37;">Panel de Administración</h2>
+        <p style="color:#fff;">Sistema de gestión activo.</p>
+        <button onclick="closeAdmin()" style="background:#d4af37; color:#000; border:none; padding:10px; cursor:pointer; font-weight:bold;">Cerrar Panel</button>
     </div>
 
     <script>
@@ -62,13 +58,18 @@
         function checkAdmin() {
             clicks++;
             if (clicks === 3) {
-                let pass = prompt("Ingrese clave de administrador:");
+                let pass = prompt("Ingrese clave:");
                 if (pass === "1234") {
-                    alert("Bienvenido al Panel de Administración");
-                    // Aquí se habilitaría la lógica del menú interno
+                    document.getElementById('admin-panel').style.display = 'block';
+                    clicks = 0;
+                } else {
+                    alert("Clave incorrecta");
+                    clicks = 0;
                 }
-                clicks = 0;
             }
+        }
+        function closeAdmin() {
+            document.getElementById('admin-panel').style.display = 'none';
         }
     </script>
 </body>
