@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Fashion Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0b0b0b;
+font-family:'Poppins',sans-serif;
+color:white;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(to right,#000,#1a1a1a,#000);
+padding:25px;
+text-align:center;
+border-bottom:1px solid #c9a44c;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-family:'Cinzel',serif;
+font-size:42px;
+font-weight:600;
+color:#d4af37;
+letter-spacing:6px;
+text-shadow:0 0 10px rgba(212,175,55,.4);
+cursor:pointer;
+}
+
+/* BOTONES */
+
+.top-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.top-buttons a{
+text-decoration:none;
+padding:12px 25px;
+border:1px solid #d4af37;
+color:#d4af37;
+border-radius:30px;
+transition:.3s;
+font-weight:500;
+}
+
+.top-buttons a:hover{
+background:#d4af37;
+color:black;
+}
+
+/* TITULOS */
+
+.section-title{
+text-align:center;
+font-size:32px;
+margin:50px 0 20px;
+font-family:'Cinzel',serif;
+color:#d4af37;
+}
+
+/* CARRUSEL */
+
+.carousel{
+display:flex;
+overflow-x:auto;
+scroll-behavior:smooth;
+gap:25px;
+padding:20px;
+}
+
+.carousel::-webkit-scrollbar{
+height:8px;
+}
+
+.carousel::-webkit-scrollbar-thumb{
+background:#d4af37;
+border-radius:10px;
+}
+
+/* TARJETAS */
+
+.card{
+min-width:340px;
+background:#141414;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(0,0,0,.5);
+border:1px solid rgba(212,175,55,.2);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:420px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h2{
+font-size:24px;
+margin-bottom:10px;
+color:#d4af37;
+}
+
+.card p{
+font-size:14px;
+line-height:1.6;
+margin-bottom:15px;
+color:#ccc;
+}
+
+.price{
+font-size:22px;
+margin-bottom:15px;
+font-weight:bold;
+color:white;
+}
+
+/* BOTON COMPRAR */
+
+.buy-btn{
+display:inline-block;
+padding:12px 20px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
+
+.buy-btn:hover{
+background:white;
+}
+
+/* RESEÑAS */
+
+.reviews{
+padding:50px 20px;
+text-align:center;
+}
+
+.review-box{
+max-width:700px;
+margin:20px auto;
+background:#141414;
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,.3);
+}
+
+.review-box h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:60px;
+padding:30px;
+text-align:center;
+background:#000;
+border-top:1px solid #d4af37;
+color:#999;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.logo{
+font-size:30px;
+}
+
+.card{
+min-width:280px;
+}
+
+.card img{
+height:350px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+O•M
+</div>
+
+<div class="top-buttons">
+
+<a href="https://wa.me/573001112233?text=Hola,%20quiero%20una%20asesoría">
+Asesorías
+</a>
+
+<a href="#reviews">
+Reseñas
+</a>
+
+</div>
+
+</header>
+
+<!-- ROPA -->
+
+<h1 class="section-title">Colección de Ropa</h1>
+
+<div class="carousel">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop" alt="Ropa">
+
+<div class="card-content">
+
+<h2>Chaqueta Premium</h2>
+
+<p>
+Diseño elegante urbano con acabados exclusivos y materiales de alta calidad.
+</p>
+
+<div class="price">$180.000</div>
+
+<a class="buy-btn"
+href="https://wa.me/573001112233?text=Hola,%20quiero%20comprar%20la%20Chaqueta%20Premium">
+Comprar
+</a>
+
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop" alt="Vestido">
+
+<div class="card-content">
+
+<h2>Vestido Luxury</h2>
+
+<p>
+Elegancia moderna para eventos y ocasiones especiales.
+</p>
+
+<div class="price">$220.000</div>
+
+<a class="buy-btn"
+href="https://wa.me/573001112233?text=Hola,%20quiero%20comprar%20el%20Vestido%20Luxury">
+Comprar
+</a>
+
+</div>
+</div>
+
+</div>
+
+<!-- ACCESORIOS -->
+
+<h1 class="section-title">Accesorios</h1>
+
+<div class="carousel">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop" alt="Reloj">
+
+<div class="card-content">
+
+<h2>Reloj Elegance</h2>
+
+<p>
+Accesorio sofisticado con acabado metálico premium.
+</p>
+
+<div class="price">$320.000</div>
+
+<a class="buy-btn"
+href="https://wa.me/573001112233?text=Hola,%20quiero%20comprar%20el%20Reloj%20Elegance">
+Comprar
+</a>
+
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop" alt="Bolso">
+
+<div class="card-content">
+
+<h2>Bolso Gold Edition</h2>
+
+<p>
+Diseño exclusivo con acabados dorados y estilo moderno.
+</p>
+
+<div class="price">$260.000</div>
+
+<a class="buy-btn"
+href="https://wa.me/573001112233?text=Hola,%20quiero%20comprar%20el%20Bolso%20Gold%20Edition">
+Comprar
+</a>
+
+</div>
+</div>
+
+</div>
+
+<!-- RESEÑAS -->
+
+<section class="reviews" id="reviews">
+
+<h1 class="section-title">Reseñas</h1>
+
+<div class="review-box">
+<h3>María Gómez</h3>
+<p>
+“La calidad es increíble. Me encantó la atención y el estilo exclusivo.”
+</p>
+</div>
+
+<div class="review-box">
+<h3>Camila Restrepo</h3>
+<p>
+“Entrega rápida y productos exactamente como en las fotos.”
+</p>
+</div>
+
+</section>
+
+<footer>
+
+Luxury Fashion Store © 2026
+
+</footer>
+
+<!-- SEGURIDAD BÁSICA -->
+
+<script>
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function(e) {
+
+if(e.keyCode == 123) {
+return false;
+}
+
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+
+}
+
+</script>
+
+</body>
+</html>
