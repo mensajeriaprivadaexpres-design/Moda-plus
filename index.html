@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Moda Plus y Accesorios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body { background:#000; font-family:'Poppins',sans-serif; color:white; padding-bottom: 50px; user-select: none; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        
+        header { background:linear-gradient(to bottom,#000,#111); padding:20px; text-align:center; border-bottom:1px solid #d4af37; }
+        .logo-img { max-width: 300px; cursor: pointer; margin: 0 auto; display: block; }
+        .top-buttons { display:flex; justify-content:center; gap:15px; margin-top:20px; }
+        .top-buttons a { padding:10px 20px; border:1px solid #d4af37; border-radius:20px; color:#d4af37; text-decoration:none; font-size:14px; }
+        
+        .swiper { width: 90%; max-width: 500px; border-radius: 20px; border: 1px solid #333; margin-top: 40px; }
+        .swiper-slide img { width: 100%; height: 400px; object-fit: cover; }
+        .swiper-pagination-fraction { color: #d4af37; font-weight: bold; background: rgba(0,0,0,0.6); padding: 5px; border-radius: 10px; width: 60px; margin: 0 auto; }
+        
+        .card-content { text-align: center; padding: 20px; margin-bottom: 30px; }
+        .buy-btn { display:inline-block; margin-top:10px; padding:12px 30px; background:#d4af37; color:black; border-radius:25px; text-decoration:none; font-weight:bold; }
+
+        #reviews { padding: 40px 20px; background: #0a0a0a; margin-top: 40px; }
+        .review-card { border-left: 3px solid #d4af37; padding: 15px; margin-bottom: 20px; background: #111; border-radius: 0 10px 10px 0; }
+        .review-card h4 { color: #d4af37; margin-bottom: 5px; }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+<header>
+    <img src="https://i.imgur.com/5EyDZn5.png" alt="CG Moda" class="logo-img" id="adminAccess">
+    <div class="top-buttons">
+        <a href="https://wa.me/573007637773?text=Hola,%20necesito%20asesoría">Asesorías</a>
+        <a href="#reviews">Reseñas</a>
+    </div>
+</header>
+
+<!-- Carrusel de Producto 1 -->
+<div class="swiper productSwiper1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img id="p1Img1" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"></div>
+        <div class="swiper-slide"><img id="p1Img2" src="https://images.unsplash.com/photo-1483985988355-763728e1935b"></div>
+    </div>
+    <div class="swiper-pagination pagination1"></div>
+</div>
+<div class="card-content">
+    <h2 id="p1Nom">Chaqueta Luxury</h2>
+    <p id="p1Pre">$180.000</p>
+    <a class="buy-btn" href="https://wa.me/573007637773?text=Comprar%20Chaqueta%20Luxury">Comprar</a>
+</div>
+
+<!-- Carrusel de Producto 2 -->
+<div class="swiper productSwiper2">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef"></div>
+        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce668"></div>
+    </div>
+    <div class="swiper-pagination pagination2"></div>
+</div>
+<div class="card-content">
+    <h2>Set de Accesorios Gold</h2>
+    <p>$85.000</p>
+    <a class="buy-btn" href="https://wa.me/573007637773?text=Comprar%20Accesorios">Comprar</a>
+</div>
+
+<!-- Sección de Reseñas -->
+<section id="reviews">
+    <h2 style="text-align:center; margin-bottom:20px; color:#d4af37;">Lo que dicen nuestras clientas</h2>
+    <div class="review-card">
+        <h4>Camila R. - Medellín</h4>
+        <p>"¡Claudia es un sol! La chaqueta me quedó perfecta y la asesoría fue lo mejor, me ayudó a elegir el outfit para mi evento. Súper recomendada."</p>
+    </div>
+    <div class="review-card">
+        <h4>Valentina M. - Bogotá</h4>
+        <p>"Primera vez que compro y me encantó la calidad de los accesorios. Llegó súper rápido y la atención de Claudia es demasiado personalizada."</p>
+    </div>
+    <div class="review-card">
+        <h4>Sofía G. - Cali</h4>
+        <p>"Mis accesorios Gold llegaron impecables. Se nota que Claudia pone mucho amor en cada detalle. Definitivamente volveré a comprar."</p>
+    </div>
+    <div class="review-card">
+        <h4>Laura P. - Barranquilla</h4>
+        <p>"La mejor experiencia de compra. Claudia me ayudó a encontrar el regalo perfecto para mi hermana. ¡Mil gracias por la paciencia!"</p>
+    </div>
+    <div class="review-card">
+        <h4>Daniela H. - Pereira</h4>
+        <p>"La ropa es hermosa y de una calidad increíble. La atención de Claudia hace que todo el proceso sea muy confiable. ¡10/10!"</p>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const el = (id) => document.getElementById(id);
+    
+    // Al cargar la página, se recuperan los datos guardados
+    window.onload = () => {
+        if(localStorage.p1n) el('p1Nom').innerText = localStorage.p1n;
+        if(localStorage.p1p) el('p1Pre').innerText = localStorage.p1p;
+        if(localStorage.p1i1) el('p1Img1').src = localStorage.p1i1;
+    };
+
+    // Panel de Administrador
+    document.getElementById("adminAccess").addEventListener("click", function(){
+        let clave = prompt("Ingrese clave administrador");
+        if(clave === "cg2026"){
+            let n = prompt("Nuevo nombre del producto principal:", el('p1Nom').innerText);
+            let p = prompt("Nuevo precio:", el('p1Pre').innerText);
+            let i = prompt("URL de la imagen principal:", el('p1Img1').src);
+            
+            if(n) { el('p1Nom').innerText = n; localStorage.p1n = n; }
+            if(p) { el('p1Pre').innerText = p; localStorage.p1p = p; }
+            if(i) { el('p1Img1').src = i; localStorage.p1i1 = i; }
+        } else if(clave !== null) {
+            alert("Clave incorrecta");
+        }
+    });
+
+    // Inicialización de Swipers
+    new Swiper('.productSwiper1', { loop: true, pagination: { el: '.pagination1', type: 'fraction' } });
+    new Swiper('.productSwiper2', { loop: true, pagination: { el: '.pagination2', type: 'fraction' } });
+</script>
+
+</body>
+</html>
